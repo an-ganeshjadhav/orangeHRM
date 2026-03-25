@@ -4,7 +4,7 @@
 
 # OrangeHRM Starter Application
 
-OrangeHRM is a comprehensive Human Resource Management (HRM) System that captures all the essential functionalities required for any enterprise. Copyright (C) 2006 OrangeHRM Inc., http://www.orangehrm.com/
+OrangeHRM is a comprehensive Human Resource Management (HRM) System that captures all the essential functionalities required for any enterprise. Copyright (C) 2006 OrangeHRM Inc., <http://www.orangehrm.com/>
 
 OrangeHRM is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 
@@ -38,16 +38,20 @@ OrangeHRM is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 ## Resources
 
 ### Demo
-Live demo is available at : https://opensource-demo.orangehrmlive.com
+
+Live demo is available at : <https://opensource-demo.orangehrmlive.com>
 
 ### Releases
-Sourceforge : https://sourceforge.net/p/orangehrm
+
+Sourceforge : <https://sourceforge.net/p/orangehrm>
 
 ### Website
-https://www.orangehrm.com/
+<https://www.orangehrm.com/>
 
 ## Help & Support
+
 Submit your help requests through [OrangeHRM Help Portal](https://starterhelp.orangehrm.com/hc/en-us/requests/new) or Email to [ossupport@orangehrm.com](mailto:ossupport@orangehrm.com)
 
-## License 
+## License
+
 GNU General Public License
