@@ -337,8 +337,37 @@ const getStandardTimezone = (timezoneOffset: number) => {
  * @property {string} label - timezone's english formatted label
  * @property {number} offset - timezone's offset in hours
  */
+// Map of deprecated IANA timezone names to their modern equivalents
+const deprecatedTimezones: Record<string, string> = {
+  'Asia/Calcutta': 'Asia/Kolkata',
+  'Asia/Saigon': 'Asia/Ho_Chi_Minh',
+  'Asia/Katmandu': 'Asia/Kathmandu',
+  'Asia/Rangoon': 'Asia/Yangon',
+  'Asia/Thimbu': 'Asia/Thimphu',
+  'Asia/Ujung_Pandang': 'Asia/Makassar',
+  'Asia/Ulan_Bator': 'Asia/Ulaanbaatar',
+  'Asia/Dacca': 'Asia/Dhaka',
+  'Asia/Ashkhabad': 'Asia/Ashgabat',
+  'Asia/Muscat': 'Asia/Dubai',
+  'Pacific/Ponape': 'Pacific/Pohnpei',
+  'Pacific/Truk': 'Pacific/Chuuk',
+  'Pacific/Samoa': 'Pacific/Pago_Pago',
+  'Atlantic/Faeroe': 'Atlantic/Faroe',
+  'Europe/Kiev': 'Europe/Kyiv',
+  'America/Buenos_Aires': 'America/Argentina/Buenos_Aires',
+  'America/Indianapolis': 'America/Indiana/Indianapolis',
+  'America/Louisville': 'America/Kentucky/Louisville',
+  'America/Catamarca': 'America/Argentina/Catamarca',
+  'America/Cordoba': 'America/Argentina/Cordoba',
+  'America/Mendoza': 'America/Argentina/Mendoza',
+};
+
 const guessTimezone = () => {
   let timezoneName = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // Map deprecated timezone names to modern equivalents
+  if (timezoneName && deprecatedTimezones[timezoneName]) {
+    timezoneName = deprecatedTimezones[timezoneName];
+  }
   // getTimezoneOffset return difference in minutes between UTC and client
   // offset is positive if the local timezone is behind UTC and negative if it is ahead
   const timezoneOffset = (new Date().getTimezoneOffset() / 60) * -1;
